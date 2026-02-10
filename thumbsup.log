@@ -1,0 +1,3 @@
+2026-02-10T08:58:46.562Z thumbsup:warn magick (https://imagemagick.org) is not installed. You will not be able to process HEIC images.
+2026-02-10T08:58:46.562Z thumbsup:warn ffmpeg (https://www.ffmpeg.org) is not installed. You will not be able to process videos.
+2026-02-10T08:58:46.562Z thumbsup:warn gifsicle (http://www.lcdf.org/gifsicle) is not installed. You will not be able to process animated GIFs.
