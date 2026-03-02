@@ -1,203 +1,153 @@
+:root {
+    --bg-color: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #666666;
+    --accent: #17baef;
+    --gap: 15px;
+}
+
 * {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-html {
-  height: 100%;
-}
-html,
+
 body {
-  padding: 0;
-  margin: 0;
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
-body {
-  background: #fff;
-  color: #444;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  font-weight: lighter;
-  margin-bottom: 1em;
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
 }
-a {
-  text-decoration: none;
+
+/* Header */
+.main-header {
+    text-align: center;
+    margin-bottom: 80px;
 }
-.clearfix:after {
-  content: " ";
-  display: block;
-  clear: both;
+
+.ship-name {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
-.noselect {
-  cursor: default;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
+.creator-name {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 300;
 }
-header {
-  color: #17baef;
-  font-size: 1.4em;
-  font-family: 'Montserrat', sans-serif;
-  padding: 0;
+
+.divider {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin: 25px auto;
 }
-h1 {
-  margin: 1em;
-  display: inline-block;
+
+.description {
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+    color: var(--text-muted);
 }
-h1 a {
-  color: #17baef;
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--gap);
+    list-style: none;
 }
-footer {
-  border-top: 1px solid #17baef;
-  color: #17baef;
-  font-size: 0.8em;
-  font-style: italic;
-  margin-left: 2em;
-  margin-top: 3em;
-  padding-top: 0.5em;
+
+.gallery-grid li {
+    overflow: hidden;
+    background: #f8f8f8;
+    aspect-ratio: 1 / 1;
 }
-footer a {
-  color: #555;
-}
-nav.breadcrumbs {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 1.5em;
-  font-weight: bold;
-  height: 4em;
-  background: url('hero.jpg') center center repeat;
-  background-size: contain;
-  color: #fff;
-  position: relative;
-}
-nav.breadcrumbs .mask {
-  background-color: #17baef;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.9;
-  z-index: 1;
-}
-nav.breadcrumbs a,
-nav span {
-  position: relative;
-  z-index: 2;
-  display: inline;
-}
-nav.breadcrumbs a {
-  color: #fff;
-  text-decoration: none;
-}
-nav.breadcrumbs .separator {
-  color: #fff;
-  display: inline-block;
-  margin: 0 0.5em;
-}
-#content {
-  padding: 2em;
-}
-#albums {
-  margin-bottom: 2em;
-  overflow: hidden;
-}
-#albums a {
-  display: inline-block;
-  margin-right: 0.5em;
-}
-#albums h3 {
-  color: #444;
-  margin-top: 1em;
-  font-size: 1em;
-}
-#albums .meta {
-  color: #999;
-  font-size: 0.9em;
-  font-style: italic;
-  line-height: 1.2em;
-  margin: 0.5em 0;
-  width: 100%;
-}
-#albums > li {
-  display: inline-block;
-  margin-right: 1em;
-  margin-bottom: 0em;
-}
-#albums .grid {
-  opacity: 0.9;
-  width: 360px;
-  height: 60px;
-  overflow: hidden;
-}
-#albums .mosaic {
-  width: 360px;
-  opacity: 0.9;
-  overflow: hidden;
-}
-#albums .grid li {
-  float: left;
-  padding: 0;
-  padding-right: 0px;
-  padding-bottom: 0px;
-}
-#albums .grid img {
-  display: block;
-  height: 60px;
-  width: 60px;
-}
-@media only screen and (max-width: 450px) {
-  #albums .meta .separator {
-    display: none;
-  }
-  #albums .meta .summary {
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-  }
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-#media {
-  margin-bottom: 2em;
+
+.gallery-grid li:hover img {
+    transform: scale(1.05);
 }
-#media:after {
-  content: "";
-  display: table;
-  clear: both;
+
+/* Contact Section */
+.contact-section {
+    margin-top: 100px;
+    padding-top: 60px;
+    border-top: 1px solid #eee;
+    text-align: center;
 }
-#media li {
-  float: left;
-  margin-right: 0.4em;
-  margin-bottom: 0.2em;
-  position: relative;
+
+.contact-card h3 {
+    font-weight: 600;
+    margin-bottom: 15px;
 }
-#media li .video-overlay {
-  left: 50%;
-  height: 48px;
-  margin-left: -24px;
-  margin-top: -24px;
-  position: absolute;
-  top: 50%;
-  width: 48px;
+
+.contact-details {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
-nav.pagination {
-  color: #666;
-  display: inline-block;
-  font-size: 1em;
-  padding: 0em 0em 0.5em 0em;
+
+.contact-details a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
 }
-nav.pagination .page {
-  margin-right: 0.2em;
+
+.contact-details a:hover {
+    color: var(--accent);
 }
-nav.pagination .page.current {
-  font-weight: bold;
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .ship-name { font-size: 2rem; }
+    .container { padding: 40px 15px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .contact-details { flex-direction: column; gap: 10px; }
 }
-nav.pagination a {
-  color: #666;
+
+#backToTop {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: 1px solid #ddd;
+    outline: none;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-#zip {
-  color: #666;
-  margin-bottom: 2em;
-}
-#zip a {
-  color: #3399ff;
+
+#backToTop:hover {
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    transform: translateY(-3px);
 }
